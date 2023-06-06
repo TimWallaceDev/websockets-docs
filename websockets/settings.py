@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'chat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+# mysite/settings.py
+# Daphne
+ASGI_APPLICATION = "websockets.asgi.application"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
