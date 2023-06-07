@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zyit2jga&^()jjo86zh(nutcg*75#g_n(afs45qk$w_zhr#c3v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.18']
 
 
 # Application definition
@@ -44,6 +44,16 @@ INSTALLED_APPS = [
 # mysite/settings.py
 # Daphne
 ASGI_APPLICATION = "websockets.asgi.application"
+
+# Channels
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
